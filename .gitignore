@@ -1,1 +1,14 @@
+# Credentials and secrets
 google-sheets-api.json
+*.key
+*.pem
+credentials/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+env/
+venv/
