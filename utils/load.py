@@ -72,10 +72,7 @@ class DataLoader:
                 valueInputOption='RAW',
                 body=body
             ).execute()
-            
-            sheet_url = f"https://docs.google.com/spreadsheets/d/{spreadsheet_id}"
-            logger.info(f"Data berhasil disimpan ke Google Sheets: {sheet_url}")
-            return sheet_url
+            return f"https://docs.google.com/spreadsheets/d/{spreadsheet_id}"
             
         except Exception as e:
             logger.error(f"Gagal menyimpan ke Google Sheets: {str(e)}")
