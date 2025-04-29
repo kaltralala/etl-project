@@ -5,6 +5,7 @@ import time
 import logging
 from typing import Optional, List, Dict, Union
 from requests.exceptions import RequestException
+from datetime import datetime  # Tambahkan impor ini
 
 # Konfigurasi logging untuk monitoring proses scraping
 logging.basicConfig(level=logging.INFO)
@@ -108,7 +109,7 @@ class ProductExtractor:
         except Exception as e:
             raise ProductExtractorException(f"Gagal mengekstrak rating: {str(e)}")
 
-    def extract_product_data(self, page: int) -> List[Dict[str, str]]:
+    def extract_product_data(self, page: int) -> List[Dict[str, Union[str, float]]]:
         """
         Mengekstrak data produk dari satu halaman.
         
@@ -143,7 +144,8 @@ class ProductExtractor:
                         'rating': self.extract_rating(details),
                         'colors': next((p.text.strip() for p in details.select('p') if 'Colors' in p.text), 'No Color Info'),
                         'size': next((p.text.replace('Size:', '').strip() for p in details.select('p') if 'Size:' in p.text), 'No Size Info'),
-                        'gender': next((p.text.replace('Gender:', '').strip() for p in details.select('p') if 'Gender:' in p.text), 'No Gender Info')
+                        'gender': next((p.text.replace('Gender:', '').strip() for p in details.select('p') if 'Gender:' in p.text), 'No Gender Info'),
+                        'timestamp': datetime.now().isoformat()  # Tambahkan timestamp
                     }
                     data.append(product_data)
                 except Exception as e:
