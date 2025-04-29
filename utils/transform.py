@@ -85,7 +85,8 @@ class DataTransformer:
             
             # Hapus nilai null menggunakan dropna
             logger.info("Menghapus nilai null...")
-            df_clean = df_clean.dropna()
+            # Jangan hapus nilai null di kolom 'timestamp'
+            df_clean = df_clean.dropna(subset=[col for col in df_clean.columns if col != 'timestamp'])
             
             # Reset index
             df_clean = df_clean.reset_index(drop=True)
