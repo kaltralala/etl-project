@@ -34,7 +34,7 @@ etl-project/
 ├── raw_fashion_data.csv
 ├── google-sheets-api.json
 └── README.md
-
+```
 ---
 
 ## 🚀 Cara Menjalankan Proyek
