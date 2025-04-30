@@ -38,40 +38,33 @@ etl-project/
 ---
 
 ## 🚀 Cara Menjalankan Proyek
-1. Clone repositori dan pasang dependensi
 
+### 1. Clone repositori dan pasang dependensi
+```bash
 git clone https://github.com/Kaltralala/etl-project.git
 cd etl-project
 pip install -r requirements.txt
 
-2. Jalankan pipeline ETL
-
+### 2. Jalankan Pipeline ETL
+Pipeline utama dijalankan melalui file `main.py` yang mengatur alur ETL secara terstruktur:
+```bash
 python main.py
 
+---
+
+```markdown
 ## 📤 Output Pipeline
 
-Pipeline ini menghasilkan output pada tiga media:
+Setelah pipeline dijalankan, kamu akan mendapatkan output berikut:
 
-    raw_fashion_data.csv – Data mentah hasil web scraping
+- `raw_fashion_data.csv` – Data hasil ekstraksi mentah dari website
+- `clean_fashion_data.csv` – Data yang telah dibersihkan dan siap dianalisis
+- **Google Sheets** – Data diunggah ke spreadsheet Google melalui integrasi API
+- **PostgreSQL** – Data dimuat ke dalam tabel di database PostgreSQL untuk keperluan lanjutan
 
-    clean_fashion_data.csv – Data bersih dan siap pakai
+---
 
-    Google Sheets – Data otomatis diunggah menggunakan API Google Sheets
-
-    PostgreSQL – Data dimuat ke dalam tabel di database PostgreSQL
-
-## ✅ Pengujian
-
-Tersedia unit test untuk setiap tahap ETL. Jalankan dengan:
-
-pytest --cov=utils tests/
-
-## 👨‍💻 Kontributor
-
-Haykal Maulana Rulian
-GitHub: Kaltralala
-LinkedIn
-
-## 📄 Lisensi
-
-Proyek ini dibuat untuk tujuan pembelajaran dan submission di Dicoding. Seluruh data dan nama bersifat fiktif.
+## 🧑‍💻 Kontributor
+- Nama: Haykal Maulana Rulian
+- GitHub: [Kaltralala](https://github.com/Kaltralala)
+- LinkedIn: [haykalmr](https://www.linkedin.com/in/haykalmr/)
