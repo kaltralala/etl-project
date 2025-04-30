@@ -44,15 +44,15 @@ etl-project/
 git clone https://github.com/Kaltralala/etl-project.git
 cd etl-project
 pip install -r requirements.txt
+```
 
 ### 2. Jalankan Pipeline ETL
 Pipeline utama dijalankan melalui file `main.py` yang mengatur alur ETL secara terstruktur:
 ```bash
 python main.py
-
+```
 ---
 
-```markdown
 ## 📤 Output Pipeline
 
 Setelah pipeline dijalankan, kamu akan mendapatkan output berikut:
